@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Ubuntu' , sans-serif;
+    font-size: 16px;
+}
+ul{
+    list-style: none;
+}
+
+main{
+    position: relative;
+    background: linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 80vh;
+    border-bottom-left-radius: 120px;
+    overflow: hidden;
+}
+
+main > * {
+    width: 80%;
+    margin: auto;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 155px;
+    height: 20vh;
+    z-index: 2;
+}
+
+.logo {
+    object-fit: contain;
+}
+
+/***nav styling***/
+
+nav {
+    flex: 1; /***push menu to rigth side***/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+nav a {
+    color: #fff;
+    font-weight: 600 ;
+    display: inline-block;
+}
+
+.nav-links > li > a {
+    padding: 15px;
+}
+
+                                /***arrows rotation***/
+.nav-links > li > a::after {
+    content: url(../images/icon-arrow-light.svg);
+    display: inherit;
+    transition: all 0.3s ease-in-out;
+    margin-left: 0.5rem;
+}
+
+.nav-links > li:hover > a::after {
+    transform: rotateZ(180deg) scale(1.1);
+}
+                                  /***end of arrows editing rotation***/
+
+.dropdown { /***link box***/
+    position: absolute;
+    background: #fff;
+    min-width: 225px;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 15px 45px rgba(60, 60, 60, 0.2);
+    display: none;
+}
+
+.dropdown ::before {
+    content: '';
+    top: 0;
+    left: 4rem;
+    transform: translateY(-100%);
+    position: absolute;
+    border-width: 0.5rem;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.dropdown a {
+    color: #111;
+    display: block;
+    margin: 15px;
+    font-weight: 500;
+  }
+  .dropdown a:hover {
+    font-weight: bold;
+  }
+
+.nav-links > li:hover .dropdown {
+  display: block;
+  animation: sweep 0.3s ease-in-out;
+}
+
+@keyframes sweep {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }                /***end of link box***/
+  
+.log a:first-child {
+    margin-right: 52.5px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+.intro {
+    text-align: center;
+    z-index: 2;
+  }
+.intro h1 {
+    font-size: 46px;
+    color: #fff;
+    font-weight:500;
+  }
+.intro p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 25px;
+    font-weight: 500;
+  }
+.intro-cta {
+    margin-top: 45px;
+  }
+.intro-cta a {
+    padding: 11.25px 18.75px;
+    margin: 0 15px;
+  }  
+
+.shapes {
+    position: absolute;
+    top: 0;
+    right: -30%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(2);
+    user-select: none;
+    pointer-events: none;
+  }
+
+
+
+
+.btn {
+    display: inline-block;
+    background: #ffff;
+    padding: 10px 22px;
+    color: hsl(353, 100%, 62%);
+    border-radius: 70px ;
+    font-weight: 700;
+    border: 1.1px solid transparent;
+}
+
+.btn:hover {
+    background: hsl(356, 100%, 66%);
+    color: #fff;
+    border-color: #fff;
+
+}
+
+.transparent {
+    background: transparent;
+    color: #ffff;
+    border-color: #fff ;
+}
+
+
+.transparent:hover {
+  background: #fff;
+  color: hsl(356, 100%, 66%);
+}
+
+/***body section***/
+
+/***section 1****/
+.future{
+  overflow: hidden;
+}
+
+.future >*{
+  width: 80%;
+  margin: auto;
+}
+
+.future-title{
+  text-align: center;
+  transform: translateY(175px);
+  margin-bottom: 80px;
+}
+
+.future-title h2{
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: minmax(750px,auto) 1fr;
+  place-items: center;
+}
+
+.features{
+  display: flex;
+  flex-flow: column;
+  gap: 85px;
+}
+
+.feature h4 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.feature p {
+  line-height: 1.7;
+  color: rgba(24, 24, 24, 0.5);
+  font-weight: 600;
+}
+
+.feature-img{
+  transform: translateX(80px);
+  user-select: none;
+  pointer-events: none;
+}
+
+.mobile-feature-img{
+  display: none;
+  user-select: none;
+  pointer-events: none;
+}
+/***end section 1***/
+
+/*** section 2***/
+.state{
+  position: relative;
+  background: url(../images/bg-pattern-circles.svg) no-repeat -41% 80%, linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  margin-top: 75px;
+  border-radius: 0 120px;  
+}
+
+.split{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 57vh;
+  gap: 75px;
+}
+
+.state-img{
+  z-index: 2;
+  user-select: none;
+  pointer-events: none;
+  padding-top: 45px;
+}
+
+.state-desc h4{
+  color: #fff;
+  font-size: 45px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.state-desc p{
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  line-height: 1.7;
+}
+/***end section 2***/
+
+/***section 3***/
+.summary{
+  overflow: hidden;
+  margin-top: 90px;
+}
+
+.summary-content{
+  width: 80%;
+  margin: auto;
+  transform: translateX(-300px);
+  display: grid;
+  grid-template-columns: minmax(750px, auto) 1fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.summary-img{
+  user-select: none;
+  pointer-events: none;
+}
+
+.summary-img-mobile-laptop{
+  display: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.summary-features{
+  display: flex;
+  flex-flow: column;
+  gap:50px
+}
+
+.feature-desc h4{
+  font-size: 45px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.feature-desc p{
+  line-height: 1.7;
+  font-weight: 500;
+  color: rgba(24, 24, 24, 0.5);
+}
+/***end section 3***/
+
+/***Footer***/
+footer{
+  margin-top: 50px;
+  background-color: hsl(237, 17%, 21%);
+}
+
+.footer-links {
+  width: 80%;
+  margin: auto;
+  padding: 75px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.link-items > a {
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.footer-dropdown {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+}
+
+.footer-dropdown a{
+  display: block;
+  color: hsl(240, 2%, 79%);
+}
+
+/***end footer***/
